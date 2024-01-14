@@ -68,6 +68,7 @@ const search = () => {
 </template>
 
 <style lang="scss" scoped>
+@import url("~/assets/css/main.scss");
 header {
   width: 90vw;
   margin: 1rem auto;
