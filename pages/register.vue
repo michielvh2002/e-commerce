@@ -1,16 +1,37 @@
 <script setup lang="ts">
+const firstname = ref<string>("");
+const lastname = ref<string>("");
 const email = ref<string>("");
 const password = ref<string>("");
+const repeatPass = ref<string>("");
 
-const login = () => {
-  //login logica
+const register = () => {
+  //register logic
 };
 </script>
 
 <template>
   <div class="loginContainer">
     <img src="~/assets/LoginPic.png" alt="" />
-    <form action="POST" @submit.prevent="login">
+    <form action="POST" @submit.prevent="register">
+      <div>
+        <label for="firstname">Firstname</label>
+        <input
+          id="firstname"
+          type="text"
+          v-model="firstname"
+          placeholder="Firstname"
+        />
+      </div>
+      <div>
+        <label for="lastname">Lastname</label>
+        <input
+          id="lastname"
+          type="text"
+          v-model="lastname"
+          placeholder="Lastname"
+        />
+      </div>
       <div>
         <label for="email">Email</label>
         <input id="email" type="email" v-model="email" placeholder="Email" />
@@ -24,7 +45,16 @@ const login = () => {
           placeholder="Password"
         />
       </div>
-      <button type="submit">Login</button>
+      <div>
+        <label for="repeatPass">Repeat password</label>
+        <input
+          id="repeatPassword"
+          type="password"
+          v-model="repeatPass"
+          placeholder="Repeat password"
+        />
+      </div>
+      <button type="submit">Create my account</button>
     </form>
   </div>
 </template>
