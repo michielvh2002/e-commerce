@@ -1,3 +1,7 @@
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
 
 button,
 input {
@@ -15,7 +19,7 @@ a {
 }
 p,
 a,
-button {
+button, label {
   font-family:sans-serif;
   color: black;
 }

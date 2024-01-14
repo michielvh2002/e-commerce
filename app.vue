@@ -1,6 +1,8 @@
 <template>
   <AppHeader />
-  <!-- <div>
-    <NuxtWelcome />
-  </div> -->
+  <NuxtPage />
 </template>
+
+<style lang="scss">
+@import url("~/assets/css/main.scss");
+</style>

@@ -68,7 +68,6 @@ const search = () => {
 </template>
 
 <style lang="scss" scoped>
-@import url("~/assets/css/main.scss");
 header {
   width: 90vw;
   margin: 1rem auto;
@@ -77,7 +76,7 @@ header {
 }
 .headerMainContent {
   display: grid;
-  grid-template-columns: 4rem 1fr 16rem;
+  grid-template-columns: 4rem 1fr 17rem;
   column-gap: 2rem;
   width: 100%;
   align-items: center;
