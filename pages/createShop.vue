@@ -57,6 +57,7 @@ const ibanError = computed(() => {
   }
   return null;
 });
+console.log("hzo wat");
 
 const createShop = () => {
   submitted.value = true;
