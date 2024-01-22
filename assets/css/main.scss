@@ -1,0 +1,25 @@
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+button,
+input, button:focus, input:active {
+  border: none;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  min-width: fit-content;
+}
+p,
+a,
+button, label {
+  font-family:sans-serif;
+  color: black;
+}
