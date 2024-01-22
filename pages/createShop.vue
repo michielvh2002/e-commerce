@@ -1,7 +1,6 @@
-<script setup lang="ts">
-import * as IBAN_VALIDATOR from "iban-ts";
+<script setup lang="ts"></script>
 
-const submitted = ref<boolean>(false);
+<template></template>
 
 const name = ref<string>("");
 const address = ref<string>("");
