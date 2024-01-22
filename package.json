@@ -10,13 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.0.6",
+    "@nuxt/devtools": "latest",
     "nuxt": "^3.8.2",
-    "sass": "^1.69.7",
     "vue": "^3.3.12",
     "vue-router": "^4.2.5"
-  },
-  "dependencies": {
-    "iban-ts": "^0.3.3"
   }
 }
