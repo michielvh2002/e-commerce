@@ -1,6 +1,8 @@
+$error: #b00020;
+
 body {
   max-height: 100vh;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 button,
@@ -19,7 +21,7 @@ a {
 }
 p,
 a,
-button, label {
+button, label, textarea, h1 {
   font-family:sans-serif;
   color: black;
 }
