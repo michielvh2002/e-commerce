@@ -11,6 +11,8 @@ const pfp = ref<any>(null);
 const banner = ref<any>(null);
 const iban = ref<string>("");
 
+const generalError = ref<string | null>(null);
+
 const nameError = computed(() => {
   if (submitted.value) {
     return name.value === "" ? "Fill in a name for your shop" : null;
@@ -69,6 +71,26 @@ const createShop = () => {
     ibanError.value !== null
   )
     return;
+
+  const store = useShopStore();
+  const authStore = useAuthStore();
+  if (authStore.user) {
+    try {
+      store.createShop({
+        owner: authStore.user._id,
+        name: name.value,
+        address: address.value,
+        public: addrPublic.value,
+        description: description.value,
+        profile_picture: pfp.value,
+        banner_image: banner.value,
+      });
+    } catch (error: any) {
+      generalError.value = error.message;
+    }
+  } else {
+    generalError.value = "You are not logged in, log in first";
+  }
 };
 </script>
 
