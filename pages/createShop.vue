@@ -73,7 +73,7 @@ const createShop = () => {
 </script>
 
 <template>
-  <form action="" @submit.prevent="createShop" novalidate>
+  <form action="" method="post" @submit.prevent="createShop" novalidate>
     <h1>Create your shop here</h1>
     <div>
       <InputWithLabel
