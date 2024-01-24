@@ -27,4 +27,12 @@ const shops = ref<Array<ShopSchema>>([]);
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+img {
+  max-width: 20rem;
+}
+</style>
