@@ -1,5 +1,6 @@
 import type { AxiosResponse } from "axios";
 import { myAxios } from "~/instances/myAxios";
+import type { ItemSchema } from "~/types/ItemSchema";
 import type { ShopSchema } from "~/types/ShopSchema";
 
 export const useShopStore = defineStore("shop", () => {
@@ -10,7 +11,15 @@ export const useShopStore = defineStore("shop", () => {
     return res;
   };
 
+  const createItem = async (
+    item: ItemSchema
+  ): Promise<AxiosResponse<any, any>> => {
+    const res = await myAxios.post("/createItem", { item });
+    return res;
+  };
+
   return {
     createShop,
+    createItem,
   };
 });

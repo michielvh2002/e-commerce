@@ -26,9 +26,11 @@ const addItem = () => {
   };
   items.value.push(item);
 };
-const createItems = () => {
+const createItems = async () => {
   submitted.value = true;
-  items.value.forEach((element: ItemProps) => {
+  for (let index = items.value.length - 1; index >= 0; index--) {
+    const element = items.value[index];
+
     if (
       element.name !== "" &&
       element.description !== "" &&
@@ -38,8 +40,22 @@ const createItems = () => {
       element.price >= 0
     ) {
       //send request to backend
+      const store = useShopStore();
+      const res = await store.createItem({
+        shopId: "",
+        name: element.name,
+        description: element.description,
+        price: element.price,
+        category: element.category,
+        sku: element.SKU,
+        images: element.images,
+      });
+
+      if (res.status === 201) {
+        items.value.splice(index, 1);
+      }
     }
-  });
+  }
 };
 
 const removeItem = (num: number) => {
