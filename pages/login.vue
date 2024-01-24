@@ -26,8 +26,13 @@ const login = async () => {
     <img src="~/assets/LoginPic.png" alt="" />
     <form action="" method="post" @submit.prevent="login" novalidate>
       <div>
-        <label for="email">Email</label>
-        <input id="email" type="text" v-model="username" placeholder="Email" />
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          v-model="username"
+          placeholder="Email"
+        />
       </div>
       <div>
         <label for="password">Password</label>

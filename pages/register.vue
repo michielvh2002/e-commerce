@@ -4,9 +4,36 @@ const lastname = ref<string>("");
 const email = ref<string>("");
 const password = ref<string>("");
 const repeatPass = ref<string>("");
+const username = ref<string>("");
+
+const store = useAuthStore();
+
+const generalError = ref<string | null>(null);
 
 const register = () => {
   //register logic
+  if (
+    username.value === "" ||
+    firstname.value === "" ||
+    lastname.value === "" ||
+    email.value === "" ||
+    password.value === "" ||
+    repeatPass.value === "" ||
+    password.value === repeatPass.value
+  ) {
+    generalError.value = "Fill the fields correct in";
+  }
+  try {
+    store.register(
+      username.value,
+      firstname.value,
+      lastname.value,
+      password.value,
+      email.value
+    );
+  } catch (error: any) {
+    generalError.value = error.message;
+  }
 };
 </script>
 
@@ -14,6 +41,15 @@ const register = () => {
   <div class="loginContainer">
     <img src="~/assets/LoginPic.png" alt="" />
     <form action="POST" @submit.prevent="register">
+      <div>
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          v-model="username"
+          placeholder="username"
+        />
+      </div>
       <div>
         <label for="firstname">Firstname</label>
         <input
@@ -55,6 +91,7 @@ const register = () => {
         />
       </div>
       <button type="submit">Create my account</button>
+      <p v-if="generalError">{{ generalError }}</p>
     </form>
   </div>
 </template>

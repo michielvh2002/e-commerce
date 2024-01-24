@@ -24,8 +24,27 @@ export const useAuthStore = defineStore("auth", () => {
     return res;
   };
 
+  const register = async (
+    username: string,
+    firstname: string,
+    lastname: string,
+    password: string,
+    email: string
+  ): Promise<AxiosResponse<any, any>> => {
+    const res = await myAxios.post("/signup", {
+      username: username,
+      first_name: firstname,
+      last_name: lastname,
+      email: email,
+      password: password,
+    });
+    console.log(res);
+    return res;
+  };
+
   return {
     user,
     login,
+    register,
   };
 });
