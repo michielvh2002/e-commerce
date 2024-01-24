@@ -115,5 +115,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-"# e-commerce" 

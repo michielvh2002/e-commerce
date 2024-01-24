@@ -19,9 +19,10 @@ const register = () => {
     email.value === "" ||
     password.value === "" ||
     repeatPass.value === "" ||
-    password.value === repeatPass.value
+    password.value !== repeatPass.value
   ) {
     generalError.value = "Fill the fields correct in";
+    return;
   }
   try {
     store.register(
@@ -124,6 +125,7 @@ form {
     border-radius: 0.5rem;
     padding: 0.5rem 0;
     font-weight: bold;
+    cursor: pointer;
   }
 }
 </style>
