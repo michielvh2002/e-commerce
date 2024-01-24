@@ -29,14 +29,20 @@ const addItem = () => {
 const createItems = () => {
   submitted.value = true;
   items.value.forEach((element: ItemProps) => {
-    if (element.name !== "" || element.description !== "") {
+    if (
+      element.name !== "" &&
+      element.description !== "" &&
+      element.SKU !== 0 &&
+      element.category &&
+      element.images.length !== 0 &&
+      element.price >= 0
+    ) {
       //send request to backend
     }
   });
 };
 
 const removeItem = (num: number) => {
-  //remove item
   items.value.splice(num, 1);
 };
 </script>

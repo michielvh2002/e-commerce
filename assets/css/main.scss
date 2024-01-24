@@ -4,6 +4,9 @@ body {
   max-height: 100vh;
   //overflow: hidden;
 }
+#__nuxt {
+  height: 78vh;
+}
 
 button,
 input, button:focus, input:active {
