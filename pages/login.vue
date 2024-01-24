@@ -1,19 +1,33 @@
 <script setup lang="ts">
-const email = ref<string>("");
+const store = useAuthStore();
+
+const username = ref<string>("");
 const password = ref<string>("");
 
-const login = () => {
+const generalError = ref<string | null>(null);
+
+const login = async () => {
   //login logica
+  if (username.value === "" || password.value === "") return;
+
+  try {
+    const res = await store.login(username.value, password.value);
+    if (res.status === 200) {
+      await navigateTo({ name: "home" });
+    }
+  } catch (error: any) {
+    generalError.value = error.message;
+  }
 };
 </script>
 
 <template>
   <div class="loginContainer">
     <img src="~/assets/LoginPic.png" alt="" />
-    <form action="POST" @submit.prevent="login">
+    <form action="" method="post" @submit.prevent="login" novalidate>
       <div>
         <label for="email">Email</label>
-        <input id="email" type="email" v-model="email" placeholder="Email" />
+        <input id="email" type="text" v-model="username" placeholder="Email" />
       </div>
       <div>
         <label for="password">Password</label>
@@ -25,6 +39,7 @@ const login = () => {
         />
       </div>
       <button type="submit">Login</button>
+      <span class="error" v-if="generalError">{{ generalError }}</span>
     </form>
   </div>
 </template>

@@ -101,7 +101,6 @@ defineEmits(["update:modelValue"]);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 90%;
 }
 input {
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);

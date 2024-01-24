@@ -2,4 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   components: true,
+  modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt"],
 });

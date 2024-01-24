@@ -11,12 +11,16 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.6",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "nuxt": "^3.8.2",
     "sass": "^1.69.7",
     "vue": "^3.3.12",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "iban-ts": "^0.3.3"
+    "@pinia/nuxt": "^0.5.1",
+    "axios": "^1.6.5",
+    "iban-ts": "^0.3.3",
+    "pinia": "^2.1.7"
   }
 }
