@@ -23,7 +23,7 @@ export const useShoppingBasket = defineStore(
   },
   {
     persist: {
-      storage: sessionStorage,
+      storage: persistedState.sessionStorage,
     },
   }
 );
