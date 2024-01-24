@@ -31,6 +31,8 @@ const shops = ref<Array<ShopSchema>>([]);
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  max-width: 90%;
+  margin: 0 auto;
 }
 img {
   max-width: 20rem;
